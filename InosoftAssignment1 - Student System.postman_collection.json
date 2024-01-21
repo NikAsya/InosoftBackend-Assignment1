@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "6415cc08-c897-4a78-bdb5-984f1606a01d",
+		"name": "InosoftAssignment1 - Student System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32398169"
+	},
+	"item": [
+		{
+			"name": "Get::Class List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/classes/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"classes",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get::Class with Associated Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/classes-with-students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"classes-with-students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create:New Class to Class List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "class_name",
+							"value": "Class 9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/classes/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"classes",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update:Existing Class in Class List",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"class_name\": \"Class 99\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/classes/update/65aab763bf3306bb80090548",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"classes",
+						"update",
+						"65aab763bf3306bb80090548"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get::Student List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get::Student Detail & Grades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/students/65a9437a3a57ab17150f5f52/grades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						"65a9437a3a57ab17150f5f52",
+						"grades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get::Student Subject Average Grades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/students/65a9437a3a57ab17150f5f52/grades/calculated-averages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						"65a9437a3a57ab17150f5f52",
+						"grades",
+						"calculated-averages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create: New Student Grade & Subject",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\": \"Biology\",\r\n    \"exercises\": 70,\r\n    \"weekly_exams\": 65,\r\n    \"mid_semester_exam\": 25,\r\n    \"end_semester_exam\": 45\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/students/65a9437a3a57ab17150f5f54/newGrades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						"65a9437a3a57ab17150f5f54",
+						"newGrades"
+					]
+				},
+				"description": "Store a new subject grade based on a corresponding student_id"
+			},
+			"response": []
+		}
+	]
+}
